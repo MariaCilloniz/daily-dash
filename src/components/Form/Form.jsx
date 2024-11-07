@@ -15,6 +15,12 @@ function Form() {
         }
     };
 
+    const handleDelete = (index) => {
+        const newTodos = [...todos];
+        newTodos.splice(index, 1);
+        setTodos(newTodos);
+    };
+
     return (
         <div className="form-container">
             <form onSubmit={handleSubmit}>
@@ -33,7 +39,11 @@ function Form() {
 
             <div className="todos-container">
                 {todos.map((todo, index) => (
-                    <ToDoCard key={index} text={todo} />
+                    <ToDoCard
+                        key={index}
+                        text={todo}
+                        onDelete={() => handleDelete(index)}
+                    />
                 ))}
             </div>
         </div>
