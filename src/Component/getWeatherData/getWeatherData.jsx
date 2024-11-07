@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import getWeatherData from '../api/weatherApi';
+import getWeatherData from '../../weatherApi';
 
 function WeatherComponent() {
   const [weather, setWeather] = useState(null);
@@ -36,7 +36,7 @@ function WeatherComponent() {
         <div>
           <p>Temperature: {weather.current.temp_c}°C</p>
           <p>Condition: {weather.current.condition.text}</p>
-          <img src={weather.current.condition.icon} alt="weather icon" />
+          <img src={weather.current.condition.icon} alt="weather icon" /> 
         </div>
       ) : (
         <p>No weather data available</p>
