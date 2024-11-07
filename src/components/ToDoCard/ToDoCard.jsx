@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ToDoCard({ text }) {
+function ToDoCard({ text, onDelete }) {
     const [isDone, setIsDone] = useState(false);
     return (
         <div className="todo-card">
@@ -8,15 +8,26 @@ function ToDoCard({ text }) {
                 {text}
             </h3>
             <div className="circle-container">
-                <div className="circle pink" />
-                <div className="circle blue" />
+                <div className="circle-1" />
+                <div className="circle-2" />
             </div>
+
+            {/* category */}
+
             <div
                 onClick={() => setIsDone(!isDone)}
                 className="status-toggle"
             >
                 {isDone ? '✓ Done' : '◯ Todo'}
             </div>
+            <button
+                onClick={onDelete}
+                className="delete-button"
+            >
+                Delete
+            </button>
+
+
         </div>
     );
 }
