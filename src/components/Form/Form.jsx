@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { addTask } from "../../api/taskApi";
 import "./Form.scss";
 
-function Form() {
+function Form({ handleTaskUpdate }) {
   const [newTask, setNewTask] = useState({ description: "", tags: [] });
 
   const personalRef = useRef();
@@ -37,6 +37,7 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(newTask);
+    handleTaskUpdate();
     setNewTask({ description: "", tags: [] });
 
     personalRef.current.checked = false;
@@ -121,7 +122,7 @@ function Form() {
           </label>
         </div>
         <button type="submit" className="submit-button">
-        Add Task
+          Add Task
         </button>
       </form>
     </div>
