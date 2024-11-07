@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetchDailyFortune from "../../api/fortuneApi";
+import './DailyFortune.scss';
 
 function DailyFortune() {
     const [fortune, setFortune] = useState(null);
@@ -25,10 +26,10 @@ function DailyFortune() {
     if (error) return <p>{error}</p>;
 
     return (
-        <div>
-            <h1>Fortune of the Day</h1>
+        <div className="fortune-card">
+            <h3 className="fortune-card__title">Fortune of the Day</h3>
             {fortune ? (
-                <div>
+                <div className="fortune-card__desc">
                     <p>Message: {fortune.text}</p>
                     <p>Lucky Numbers: {fortune.numbers}</p>
                 </div>

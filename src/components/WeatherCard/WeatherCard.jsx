@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import getWeatherData from '../../api/weatherApi';
+import './WeatherCard.scss'; 
 
 function WeatherCard() {
     const [weather, setWeather] = useState(null);
@@ -30,13 +31,14 @@ function WeatherCard() {
     }
 
     return (
-        <div>
-            <h1>Weather in Vancouver</h1>
+        <div className= "weather-card">
+            <h3 className= "weather-card__title">Weather in Vancouver</h3>
             {weather ? (
-                <div>
+                <div className= "weather-card__desc">
+                    <img src={weather.current.condition.icon} alt="weather icon" />
+
                     <p>Temperature: {weather.current.temp_c}°C</p>
                     <p>Condition: {weather.current.condition.text}</p>
-                    <img src={weather.current.condition.icon} alt="weather icon" />
                 </div>
             ) : (
                 <p>No weather data available</p>

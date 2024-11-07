@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background-color: #ffffff;
+  margin: 1.5rem;
+}
+
+// Primary Colors
+$primary-dark: #1E1E1E;
+$primary-light: #FAFAFA;
+$primary-neutral: #E8E8E8;
+
+// Secondary Colors
+$secondary-blue: #D5F0FF;
+$secondary-pink: #FFCECE;
+$secondary-purple: #ECDFEA;
+$secondary-green: #E0EADD;
+$secondary-yellow: #FFE8C9;
+
+
+//fonts
+$font-primary: "Noto Serif", serif;
+$font-secondary: "lexend", serif;
+
+
+h2{
+  font-family: $font-primary;
+  font-size: 2rem;
+}
+
+h3, p{
+  font-family: $font-secondary;
+}
+
+.header__title
+{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 24px;
+  border-bottom: .0625rem solid $primary-dark;
+}
