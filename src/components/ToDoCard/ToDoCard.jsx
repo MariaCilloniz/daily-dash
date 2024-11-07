@@ -7,7 +7,7 @@ function ToDoCard({ text, id, onTaskDeleted }) {
   const categories = [
     "School",
     "Home",
-    "Helath",
+    "Health",
     "Fitness",
     "Work",
     "Personal",
@@ -23,6 +23,7 @@ function ToDoCard({ text, id, onTaskDeleted }) {
   };
 
   return (
+    <div className="todo-card--container">
     <div className="todo-card">
       <h3 className={`todo-title ${isDone ? "done" : ""}`}>{text}</h3>
 
@@ -38,6 +39,7 @@ function ToDoCard({ text, id, onTaskDeleted }) {
       <button onClick={handleDelete} className="delete-button">
         Delete
       </button>
+      </div>
     </div>
   );
 }
