@@ -1,35 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { deleteTask } from "../../api/taskApi";
+import "./ToDoCard.scss";
 
-function ToDoCard({ text, onDelete }) {
-    const [isDone, setIsDone] = useState(false);
-    return (
-        <div className="todo-card">
-            <h3 className={`todo-title ${isDone ? 'done' : ''}`}>
-                {text}
-            </h3>
-            <div className="circle-container">
-                <div className="circle-1" />
-                <div className="circle-2" />
-            </div>
+function ToDoCard({ text, id }) {
+  const [isDone, setIsDone] = useState(false);
+  const categories = [
+    "School",
+    "Home",
+    "Helath",
+    "Fitness",
+    "Work",
+    "Personal",
+  ];
 
-            {/* category */}
+  const handleDelete = async () => {
+    try {
+      await deleteTask(id);
+      //   onTaskDeleted(id);
+    } catch (error) {
+      console.error("Failed to delete task:", error);
+    }
+  };
 
-            <div
-                onClick={() => setIsDone(!isDone)}
-                className="status-toggle"
-            >
-                {isDone ? '✓ Done' : '◯ Todo'}
-            </div>
-            <button
-                onClick={onDelete}
-                className="delete-button"
-            >
-                Delete
-            </button>
+  return (
+    <div className="todo-card">
+      <h3 className={`todo-title ${isDone ? "done" : ""}`}>{text}</h3>
 
+      <div className="tag-container">
+        {categories.map((category) => (
+          <div className={`tag tag--${category}`} />
+        ))}
+      </div>
 
-        </div>
-    );
+      <div onClick={() => setIsDone(!isDone)} className="status-toggle">
+        {isDone ? "✓ Done" : "◯ Todo"}
+      </div>
+      <button onClick={handleDelete} className="delete-button">
+        Delete
+      </button>
+    </div>
+  );
 }
 
-export default ToDoCard
+export default ToDoCard;
