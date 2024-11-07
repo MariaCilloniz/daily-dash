@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { deleteTask } from "../../api/taskApi";
 import "./ToDoCard.scss";
 
-function ToDoCard({ text, id }) {
+function ToDoCard({ text, id, onTaskDeleted }) {
   const [isDone, setIsDone] = useState(false);
   const categories = [
     "School",
@@ -16,7 +16,7 @@ function ToDoCard({ text, id }) {
   const handleDelete = async () => {
     try {
       await deleteTask(id);
-      //   onTaskDeleted(id);
+        onTaskDeleted(id);
     } catch (error) {
       console.error("Failed to delete task:", error);
     }
