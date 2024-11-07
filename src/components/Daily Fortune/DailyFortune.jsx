@@ -30,7 +30,7 @@ function DailyFortune() {
             <h3 className="fortune-card__title">Fortune of the Day</h3>
             {fortune ? (
                 <div className="fortune-card__desc">
-                    <p>Message: {fortune.text}</p>
+                    <p> {fortune.text}</p>
                     <p>Lucky Numbers: {fortune.numbers}</p>
                 </div>
             ) : (
