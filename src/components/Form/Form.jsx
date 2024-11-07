@@ -34,9 +34,9 @@ function Form({ handleTaskUpdate }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addTask(newTask);
+    await addTask(newTask);
     handleTaskUpdate();
     setNewTask({ description: "", tags: [] });
 
