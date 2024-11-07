@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { addTask } from "../../api/taskApi";
+import "./Form.scss";
 
 function Form() {
   const [newTask, setNewTask] = useState({ description: "", tags: [] });
@@ -120,7 +121,7 @@ function Form() {
           </label>
         </div>
         <button type="submit" className="submit-button">
-          Add
+        Add Task
         </button>
       </form>
     </div>
