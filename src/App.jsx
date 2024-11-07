@@ -1,18 +1,16 @@
-import { useState } from 'react'
 import Form from "./components/Form/Form"
-import './App.css'
+import './App.scss'
 import WeatherCard from './components/WeatherCard/WeatherCard'
 import DailyFortune from './components/Daily Fortune/DailyFortune'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+    <h2 className="header__title"> Daily Dashboard</h2>
     <WeatherCard/>
     <DailyFortune/>
     <Form />
-    
     </>
   )
 }
