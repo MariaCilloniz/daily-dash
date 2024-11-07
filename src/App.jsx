@@ -2,6 +2,7 @@ import Form from "./components/Form/Form"
 import './App.scss'
 import WeatherCard from './components/WeatherCard/WeatherCard'
 import DailyFortune from './components/Daily Fortune/DailyFortune'
+import ToDoList from './components/ToDoList/ToDoList'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <WeatherCard/>
     <DailyFortune/>
     <Form />
+    <ToDoList />
     </>
   )
 }

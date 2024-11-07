@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTasks, addTask } from '../../api/taskApi';
-import ToDoCard from './ToDoCard';
+import ToDoCard from '../ToDoCard/ToDoCard';
 
 function ToDoList() {
   const [tasks, setTasks] = useState([]);
