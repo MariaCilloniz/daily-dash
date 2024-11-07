@@ -31,7 +31,7 @@ function App() {
       <h2 className="header__title"> Daily Dashboard</h2>
       <WeatherCard />
       <DailyFortune />
-      <Form handleAddTask={handleTaskUpdate} />
+      <Form handleTaskUpdate={handleTaskUpdate} />
       <ToDoList tasks={tasks} handleTaskUpdate={handleTaskUpdate} />
     </>
   );
