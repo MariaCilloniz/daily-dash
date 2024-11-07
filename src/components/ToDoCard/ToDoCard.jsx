@@ -20,7 +20,7 @@ function ToDoCard({ text, id, handleTaskUpdate, tags }) {
 
       <div className="tag-container">
         {tags.map((tag) => (
-          <div className={`tag tag--${tag}`} />
+          <div className={`tag tag--${tag.toLowerCase()}`} />
         ))}
       </div>
 
