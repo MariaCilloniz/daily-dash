@@ -51,6 +51,7 @@ function ToDoList() {
             id={task.id}
             text={task.description}
             onTaskDeleted={handleTaskDeleted}
+            tags={task.tags}
           />
         ))}
       </div>

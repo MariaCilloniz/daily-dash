@@ -2,21 +2,13 @@ import React, { useState } from "react";
 import { deleteTask } from "../../api/taskApi";
 import "./ToDoCard.scss";
 
-function ToDoCard({ text, id, onTaskDeleted }) {
+function ToDoCard({ text, id, onTaskDeleted, tags }) {
   const [isDone, setIsDone] = useState(false);
-  const categories = [
-    "School",
-    "Home",
-    "Helath",
-    "Fitness",
-    "Work",
-    "Personal",
-  ];
 
   const handleDelete = async () => {
     try {
       await deleteTask(id);
-        onTaskDeleted(id);
+      onTaskDeleted(id);
     } catch (error) {
       console.error("Failed to delete task:", error);
     }
@@ -27,8 +19,8 @@ function ToDoCard({ text, id, onTaskDeleted }) {
       <h3 className={`todo-title ${isDone ? "done" : ""}`}>{text}</h3>
 
       <div className="tag-container">
-        {categories.map((category) => (
-          <div className={`tag tag--${category}`} />
+        {tags.map((tag) => (
+          <div className={`tag tag--${tag}`} />
         ))}
       </div>
 
